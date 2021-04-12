@@ -1,9 +1,13 @@
 @use '../abstracts/' as *;
 
 .app {
-
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
   padding: 0 2rem;
-  // background-color: $green;
   @include flex(column, center, center);
   gap: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

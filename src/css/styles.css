@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap");
+/* === backGround=== */
+/* === text=== */
+/* === errors === */
+/* === icons=== */
+/* === inputs=== */
+/* === buttons=== */
 * {
   margin: 0;
   padding: 0;
@@ -14,33 +20,33 @@ body {
   background-size: cover;
 }
 
-/* === backGround=== */
-/* === text=== */
-/* === errors === */
-/* === icons=== */
-/* === inputs=== */
-/* === buttons=== */
 .container {
   width: 100%;
   max-width: 1440px;
   height: 100vh;
   margin: 0 auto;
   background-color: #121725;
-  opacity: 0.8;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: relative;
+  opacity: 0.8;
 }
 
 .app {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 header {
@@ -52,7 +58,7 @@ header img {
 }
 
 main {
-  width: 90%;
+  width: 100%;
   max-width: 635px;
   margin: 0 auto;
   display: flex;
@@ -63,9 +69,8 @@ main {
 }
 
 .text {
-  width: 120%;
+  width: 100%;
   max-width: 400px;
-  padding: 0 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -95,18 +100,17 @@ main {
 }
 
 .socialLinks {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  gap: 1.2rem;
   color: #5a668a;
-  margin: 0 auto;
   padding: 3rem 0;
 }
 .socialLinks span {
   height: 1.7rem;
+  margin-right: 1rem;
 }
 .socialLinks span img {
   height: 100%;
@@ -114,7 +118,7 @@ main {
 
 form {
   width: 100%;
-  max-width: 430px;
+  min-height: 100px;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
@@ -124,13 +128,14 @@ form {
 }
 form .formGroup {
   width: 100%;
+  padding: 2rem 0;
 }
 form .formGroup input {
   width: 100%;
   font-size: 1.4rem;
   font-weight: 700;
   text-align: left;
-  padding: 1.8rem 2.6rem;
+  padding: 1.6rem 2.6rem;
   border: none;
   outline: none;
   border-radius: 2.8rem;
@@ -143,7 +148,9 @@ form .formGroup input:focus {
 form p {
   font-size: 1.4rem;
   font-weight: 700;
+  text-align: center;
   color: #ff3e3e;
+  transform: translateY(2rem);
 }
 form button {
   width: 100%;
@@ -163,6 +170,10 @@ form button:hover {
 }
 
 @media (min-width: 768px) {
+  body {
+    background: none;
+  }
+
   .container {
     width: 100%;
     background: url(/src/assets/desktop/bg-pattern-dots.svg) 2rem bottom no-repeat;
@@ -212,7 +223,7 @@ form button:hover {
     gap: 2rem;
   }
   .app main .text h1 {
-    width: 130%;
+    width: 100%;
     font-size: 4.8rem;
     line-height: 5.6rem;
   }
@@ -230,23 +241,29 @@ form button:hover {
     position: absolute;
     bottom: -2rem;
   }
-  .app main .form {
+  .app main form {
+    min-width: 430px;
     flex-direction: row;
     margin-bottom: 0;
     padding: 0 2rem;
     position: relative;
   }
-  .app main .form button {
+  .app main form .formGroup {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .app main form .formGroup input {
+    padding: 1.8rem 2.6rem;
+  }
+  .app main form button {
     position: absolute;
     right: 0;
+    top: 2.2rem;
     width: 40%;
   }
 }
 @media (min-width: 1440px) {
-  body {
-    background: none;
-  }
-
   .container {
     width: 100%;
     background: url(/src/assets/desktop/bg-pattern-dots.svg) right 93% no-repeat;

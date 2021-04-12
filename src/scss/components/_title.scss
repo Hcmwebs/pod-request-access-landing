@@ -1,12 +1,10 @@
 @use '../abstracts/' as *;
 
 .text {
-  width: 120%;
+  width: 100%;
   max-width: 400px;
-  padding: 0 2rem;
   text-align: center;
   @include flex(column, center, center);
-
 
   h1 {
     width: 100%;

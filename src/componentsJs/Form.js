@@ -1,27 +1,22 @@
-import useForm from './useForm';
-import validate from './Validate';
+import { useState } from 'react';
+import FormSignup from './FormSignup';
 
 const Form = () => {
-  const { handleChange, values, handleSubmit, errors } = useForm(validate);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  function submitForm () {
+    setIsSubmitted(true)
+  };
 
   return (
-    <form className='form' onSubmit={handleSubmit}>
-      <div className='formGroup'>
-        <input
-          // type='email'
-          name='email'
-          id='email'
-          placeholder='Email address'
-          value={values.email}
-          onChange={handleChange}
-        />
-        {errors.email && <p>{errors.email}</p>}
-      </div>
+    <div>
 
-      <button className='primaryBtn' type='submit'>
-        Request access
-      </button>
-    </form>
+      {!isSubmitted ? (
+        <FormSignup submitForm={submitForm} />
+      ) : (
+        <div> "Thank you for subscribing"</div>
+      )}
+    </div>
   );
 };
 

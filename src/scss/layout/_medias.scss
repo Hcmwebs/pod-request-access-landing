@@ -1,5 +1,8 @@
 @use '../abstracts' as *;
 @media (min-width: 768px) {
+  body {
+    background: none;
+  }
   .container {
     width: 100%;
     background: url(/src/assets/desktop/bg-pattern-dots.svg) 2rem bottom
@@ -52,7 +55,7 @@
         gap: 2rem;
 
         h1 {
-          width: 130%;
+          width: 100%;
           font-size: 4.8rem;
           line-height: 5.6rem;
 
@@ -75,15 +78,27 @@
         bottom: -2rem;
       }
 
-      .form {
+      form {
+        min-width: 430px;
         flex-direction: row;
         margin-bottom: 0;
         padding: 0 2rem;
         position: relative;
 
+        .formGroup {
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          input {
+            padding: 1.8rem 2.6rem;
+          }
+        }
+
         button {
           position: absolute;
           right: 0;
+          top: 2.2rem;
           width: 40%;
         }
       }
@@ -92,9 +107,6 @@
 }
 
 @media (min-width: 1440px) {
-  body {
-    background: none;
-  }
   .container {
     width: 100%;
     background: url(/src/assets/desktop/bg-pattern-dots.svg) right 93% no-repeat;

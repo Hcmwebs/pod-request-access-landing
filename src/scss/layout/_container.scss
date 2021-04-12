@@ -8,4 +8,5 @@
   background-color: $bgContainer;
   opacity: 0.8;
   @include flex(column, space-between, center);
+  position: relative;
 }

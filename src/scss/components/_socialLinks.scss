@@ -1,14 +1,15 @@
 @use '../abstracts' as *;
 
 .socialLinks {
-  @include flex(row, center, center);
+  width: 100%;
+  @include flex(row, space-around, center);
+  gap: 1.2rem;
   color: $iconsColor;
   margin: 0 auto;
   padding: 3rem 0;
 
   span {
     height: 1.7rem;
-    margin: 0 1rem;
 
     img {
       height: 100%;

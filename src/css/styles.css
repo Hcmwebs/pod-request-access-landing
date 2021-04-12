@@ -31,6 +31,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .app {
@@ -43,7 +44,7 @@ body {
 }
 
 header {
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 header img {
   height: 100%;
@@ -51,24 +52,34 @@ header img {
 }
 
 main {
-  width: 100%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 635px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .text {
-  width: 100%;
-  max-width: 350px;
+  width: 120%;
+  max-width: 400px;
+  padding: 0 2rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .text h1 {
+  width: 100%;
+  display: block;
   font-size: 2.6rem;
   font-weight: 300;
   line-height: 3.8rem;
-  text-align: center;
   margin-bottom: 1rem;
+  text-transform: uppercase;
   color: #54e6af;
 }
 .text h1 span {
@@ -80,22 +91,22 @@ main {
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 2.5rem;
-  text-align: center;
   color: white;
 }
 
 .socialLinks {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  gap: 1.2rem;
   color: #5a668a;
   margin: 0 auto;
   padding: 3rem 0;
 }
 .socialLinks span {
   height: 1.7rem;
-  margin: 0 1rem;
 }
 .socialLinks span img {
   height: 100%;
@@ -103,13 +114,13 @@ main {
 
 form {
   width: 100%;
-  max-width: 400px;
-  height: 10.8rem;
+  max-width: 430px;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 form .formGroup {
   width: 100%;
@@ -119,7 +130,7 @@ form .formGroup input {
   font-size: 1.4rem;
   font-weight: 700;
   text-align: left;
-  padding: 1.2rem 2.6rem;
+  padding: 1.8rem 2.6rem;
   border: none;
   outline: none;
   border-radius: 2.8rem;
@@ -138,7 +149,7 @@ form button {
   width: 100%;
   font-size: 1.4rem;
   font-weight: 700;
-  padding: 1.2rem 2.6rem;
+  padding: 1.6rem 2.6rem;
   border: none;
   outline: none;
   border-radius: 2.8rem;
@@ -152,8 +163,21 @@ form button:hover {
 }
 
 @media (min-width: 768px) {
-  body {
-    background: url(/src/assets/mobile/image-host.jpg) top right no-repeat;
+  .container {
+    width: 100%;
+    background: url(/src/assets/desktop/bg-pattern-dots.svg) 2rem bottom no-repeat;
+    background-size: auto;
+    background-color: #121725;
+    opacity: 1;
+  }
+  .container:after {
+    content: "";
+    width: 65%;
+    height: 80vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(/src/assets/tablet/image-host.jpg) top right no-repeat;
     background-size: contain;
   }
 
@@ -164,20 +188,84 @@ form button:hover {
     top: 0;
     left: 0;
     align-items: flex-start;
+    z-index: 99;
   }
   .app header {
     position: absolute;
     top: 0;
-    left: 0;
-    background-color: black;
+    left: 2rem;
   }
   .app main {
-    max-width: 350px;
+    width: 635px;
+    height: 500px;
+    margin: 0;
+    position: relative;
+    align-items: flex-start;
+    transform: translateY(4rem);
+    gap: 4rem;
+    background: #121725;
   }
-  .app .socialLinks {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+  .app main .text {
+    max-width: 100%;
+    text-align: left;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .app main .text h1 {
+    width: 130%;
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+  }
+  .app main .text h1 span {
+    font-size: 4.8rem;
+    display: block;
+  }
+  .app main .text p {
+    width: 430px;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+  .app main .socialLinks {
+    max-width: 500px;
+    position: absolute;
+    bottom: -2rem;
+  }
+  .app main .form {
+    flex-direction: row;
+    margin-bottom: 0;
+    padding: 0 2rem;
+    position: relative;
+  }
+  .app main .form button {
+    position: absolute;
+    right: 0;
+    width: 40%;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    background: none;
+  }
+
+  .container {
+    width: 100%;
+    background: url(/src/assets/desktop/bg-pattern-dots.svg) right 93% no-repeat;
+    background-size: auto;
+    background-color: #121725;
+  }
+  .container::after {
+    content: "";
+    width: 75%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(/src/assets/desktop/image-host.jpg) top right no-repeat;
+    background-size: cover;
+  }
+
+  main {
+    width: 723px;
+    transform: translateY(-6rem);
   }
 }
 

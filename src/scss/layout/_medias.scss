@@ -1,8 +1,23 @@
 @use '../abstracts' as *;
 @media (min-width: 768px) {
-  body {
-    background: url(/src/assets/mobile/image-host.jpg) top right no-repeat;
-    background-size: contain;
+  .container {
+    width: 100%;
+    background: url(/src/assets/desktop/bg-pattern-dots.svg) 2rem bottom
+      no-repeat;
+    background-size: auto;
+    background-color: $bgContainer;
+    opacity: 1;
+
+    &:after {
+      content: '';
+      width: 65%;
+      height: 80vh;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: url(/src/assets/tablet/image-host.jpg) top right no-repeat;
+      background-size: contain;
+    }
   }
 
   .app {
@@ -12,22 +27,93 @@
     top: 0;
     left: 0;
     align-items: flex-start;
+    z-index: 99;
 
     header {
       position: absolute;
       top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 1);
+      left: 2rem;
     }
 
     main {
-      max-width: 350px;
-    }
+      width: 635px;
+      height: 500px;
+      margin: 0;
+      position: relative;
+      align-items: flex-start;
+      transform: translateY(4rem);
+      gap: 4rem;
+      background: $bgContainer;
 
-    .socialLinks {
-      position: fixed;
-      bottom: 0;
-      left: 0;
+      .text {
+        max-width: 100%;
+        text-align: left;
+        align-items: flex-start;
+        gap: 2rem;
+
+        h1 {
+          width: 130%;
+          font-size: 4.8rem;
+          line-height: 5.6rem;
+
+          span {
+            font-size: 4.8rem;
+            display: block;
+          }
+        }
+
+        p {
+          width: 430px;
+          font-size: 1.8rem;
+          line-height: 2.8rem;
+        }
+      }
+
+      .socialLinks {
+        max-width: 500px;
+        position: absolute;
+        bottom: -2rem;
+      }
+
+      .form {
+        flex-direction: row;
+        margin-bottom: 0;
+        padding: 0 2rem;
+        position: relative;
+
+        button {
+          position: absolute;
+          right: 0;
+          width: 40%;
+        }
+      }
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background: none;
+  }
+  .container {
+    width: 100%;
+    background: url(/src/assets/desktop/bg-pattern-dots.svg) right 93% no-repeat;
+    background-size: auto;
+    background-color: $bgContainer;
+
+    &::after {
+      content: '';
+      width: 75%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: url(/src/assets/desktop/image-host.jpg) top right no-repeat;
+      background-size: cover;
+    }
+  }
+
+  main {
+    width: 723px;
+    transform: translateY(-6rem);
   }
 }

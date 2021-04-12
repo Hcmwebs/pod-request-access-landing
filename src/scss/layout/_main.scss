@@ -1,6 +1,9 @@
 @use '../abstracts' as *;
 
-main{
-  width: 100%;
-  max-width: 400px;
+main {
+  width: 90%;
+  max-width: 635px;
+  margin: 0 auto;
+  @include flex(column, center, center);
+  gap: 2rem;
 }

@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: $bgContainer;
+  opacity: 0.8;
+  @include flex(column, space-between, center);
+}

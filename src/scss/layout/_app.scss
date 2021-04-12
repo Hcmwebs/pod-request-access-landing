@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.app {
+
+  padding: 0 2rem;
+  // background-color: $green;
+  @include flex(column, center, center);
+  gap: 2rem;
+}

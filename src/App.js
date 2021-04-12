@@ -1,11 +1,13 @@
-function App() {
-  // const logo =
-  return (
-    <div className='App'>
-      <header className='App-header'>
+import Header from './componentsJs/Header';
+import Main from './componentsJs/Main';
 
-        Hello world!
-      </header>
+function App() {
+  return (
+    <div className='container'>
+      <div className='app'>
+        <Header />
+        <Main />
+      </div>
     </div>
   );
 }

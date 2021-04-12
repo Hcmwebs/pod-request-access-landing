@@ -1,0 +1,27 @@
+@use '../abstracts/colors' as *;
+
+/* === backGround=== */
+$bgContainer: $black;
+
+/* === text=== */
+$textPrimaryColor: $green;
+$textSecondaryColor: $white;
+
+/* === errors === */
+
+$errorsTextColor: $red;
+
+/* === icons=== */
+
+$iconsColor: $lightGrey;
+
+/* === inputs=== */
+$inputsBgColor: $darkGrey;
+$inputsTextColor: darken($textSecondaryColor, 50);
+$inputsFocusTextColor:lighten($textSecondaryColor, 50);
+
+/* === buttons=== */
+
+$buttonBgColor: $green;
+$buttonHoverBgColor: $lightGreen;
+$buttonColor: $black;

@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
 const Form = () => {
-  const pattern = '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$';
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState({});
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/.test(
+    email
+  );
 
   const handleChange = (e) => {
-    setEmail(e.target.value);
+    setEmail(e.target.value.trim());
   };
 
   const handleSubmit = (e) => {
@@ -24,7 +26,7 @@ const Form = () => {
     if (!email) {
       emailError.noEmail = 'Oops! Please add your email';
       isValid = false;
-    } else if (!pattern) {
+    } else if (!emailPattern) {
       emailError.wrongPattern = 'Oops! Please check your email';
       isValid = false;
     }
@@ -42,7 +44,6 @@ const Form = () => {
           id='email'
           placeholder='Email address'
           value={email}
-          pattern={pattern}
           onChange={handleChange}
         />
         {Object.keys(emailError).map((key) => (
